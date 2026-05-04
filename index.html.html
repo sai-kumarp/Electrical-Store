@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sunil Enterprises — Electrical & Hardware Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --orange: #F97316;
+      --orange-dark: #C2410C;
+      --orange-light: #FED7AA;
+      --yellow: #FBBF24;
+      --dark: #0F172A;
+      --dark2: #1E293B;
+      --dark3: #334155;
+      --mid: #475569;
+      --light: #F8FAFC;
+      --white: #FFFFFF;
+      --border: #334155;
+      --card-bg: #1E293B;
+      --text: #CBD5E1;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-thumb{background:var(--orange);border-radius:3px;}
+
+    /* ── TOPBAR ── */
+    .topbar{
+      background:var(--orange);
+      padding:0.5rem 5%;
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:0.8rem;font-weight:600;color:var(--dark);
+      flex-wrap:wrap;gap:0.5rem;
+    }
+    .topbar a{color:var(--dark);text-decoration:none;font-weight:700;}
+    .topbar-phones{display:flex;gap:1.5rem;}
+
+    /* ── NAV ── */
+    nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(15,23,42,0.96);
+      backdrop-filter:blur(20px);
+      border-bottom:2px solid var(--orange);
+      padding:1rem 5%;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    .nav-logo{
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.8rem;font-weight:900;letter-spacing:1px;
+      color:var(--white);line-height:1;
+    }
+    .nav-logo span{color:var(--orange);}
+    .nav-logo small{display:block;font-size:0.65rem;font-weight:400;letter-spacing:3px;color:var(--mid);text-transform:uppercase;}
+
+    .nav-links{display:flex;gap:1.8rem;list-style:none;}
+    .nav-links a{
+      font-size:0.85rem;font-weight:600;letter-spacing:1px;
+      text-transform:uppercase;color:var(--text);text-decoration:none;
+      transition:color 0.2s;
+    }
+    .nav-links a:hover{color:var(--orange);}
+
+    .nav-cta{
+      background:var(--orange);color:var(--white);
+      padding:0.6rem 1.4rem;border-radius:6px;
+      font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;
+      text-decoration:none;transition:all 0.2s;
+      box-shadow:0 4px 14px rgba(249,115,22,0.4);
+    }
+    .nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px);}
+
+    /* ── HERO ── */
+#hero{
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+  padding:5rem 5% 4rem;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0F172A 0%,#1E293B 50%,#0F172A 100%);
+}
+
+#hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(249,115,22,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(249,115,22,0.04) 1px,transparent 1px);
+  background-size:50px 50px;
+}
+
+#hero::after{
+  content:'';
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:radial-gradient(ellipse,rgba(249,115,22,0.15),transparent 70%);
+  top:-200px;
+  right:-200px;
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:1;
+  max-width:1100px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+}
+
+/* LEFT CONTENT */
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:1.2rem;
+}
+.hero-eyebrow::before{
+  content:'';
+  width:30px;
+  height:2px;
+  background:var(--orange);
+}
+
+.hero-h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3rem,7vw,5.5rem);
+  font-weight:900;
+  line-height:0.95;
+  color:var(--white);
+  letter-spacing:-1px;
+  margin-bottom:1.5rem;
+}
+.hero-h1 .accent{
+  color:var(--orange);
+  display:block;
+}
+
+.hero-desc{
+  font-size:1.05rem;
+  line-height:1.75;
+  color:var(--text);
+  font-weight:300;
+  max-width:480px;
+  margin-bottom:2.5rem;
+}
+
+.hero-btns{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:var(--orange);
+  color:var(--white);
+  padding:0.9rem 2.2rem;
+  border-radius:6px;
+  font-weight:700;
+  font-size:0.95rem;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  box-shadow:0 6px 20px rgba(249,115,22,0.4);
+  border:2px solid var(--orange);
+}
+.btn-primary:hover{
+  background:var(--orange-dark);
+  border-color:var(--orange-dark);
+  transform:translateY(-3px);
+}
+
+.btn-ghost{
+  background:transparent;
+  color:var(--white);
+  border:2px solid var(--dark3);
+  padding:0.9rem 2.2rem;
+  border-radius:6px;
+  font-weight:700;
+  font-size:0.95rem;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:all 0.3s ease;
+}
+.btn-ghost:hover{
+  border-color:var(--orange);
+  color:var(--orange);
+}
+
+/* RIGHT SIDE */
+.hero-right{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+
+/* CARD STYLE */
+.hero-card{
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio:1;
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(0.85);
+  transition:transform 0.5s ease;
+}
+
+.hero-card:hover img{
+  transform:scale(1.08);
+}
+
+/* TEXT OVER IMAGE */
+.hero-card-label{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);
+  padding:1rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* 🔥 FIXED BANNER IMAGE */
+.hero-card:first-child{
+  grid-column:1/-1;
+  height:280px;   /* control banner size */
+  aspect-ratio:auto;
+}
+
+.hero-card:first-child img{
+  object-fit:cover; /* or use contain if needed */
+}
+    /* ── MARQUEE ── */
+    .marquee-wrap{
+      background:var(--orange);
+      padding:0.75rem 0;overflow:hidden;
+      border-top:1px solid var(--orange-dark);border-bottom:1px solid var(--orange-dark);
+    }
+    .marquee-track{
+      display:flex;gap:3rem;width:max-content;
+      animation:marquee 30s linear infinite;
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      color:var(--dark);
+    }
+    .marquee-item::before{content:'⚡ ';}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* ── SECTION COMMON ── */
+    section{padding:5.5rem 5%;}
+
+    .section-header{margin-bottom:3.5rem;}
+    .section-eyebrow{
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:0.78rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+      color:var(--orange);display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;
+    }
+    .section-eyebrow::before{content:'';width:24px;height:2px;background:var(--orange);}
+    .section-h2{
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:clamp(2rem,4vw,3.2rem);font-weight:900;
+      color:var(--white);line-height:1;letter-spacing:-0.5px;
+    }
+
+    /* ── FILTER TABS ── */
+    .filter-wrap{
+      display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem;
+    }
+    .filter-btn{
+      background:var(--dark2);border:1.5px solid var(--border);
+      color:var(--text);padding:0.5rem 1.2rem;border-radius:50px;
+      font-size:0.8rem;font-weight:600;cursor:pointer;
+      transition:all 0.2s;letter-spacing:0.5px;
+      font-family:'Barlow',sans-serif;
+    }
+    .filter-btn:hover,.filter-btn.active{
+      background:var(--orange);border-color:var(--orange);
+      color:var(--white);
+    }
+
+    /* ── PRODUCT GRID ── */
+    #products{background:var(--dark);}
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+      gap:1.4rem;
+    }
+
+    .product-card{
+      background:var(--card-bg);
+      border:1px solid var(--border);
+      border-radius:16px;overflow:hidden;
+      transition:all 0.3s;cursor:pointer;
+      position:relative;
+    }
+    .product-card:hover{
+      transform:translateY(-6px);
+      border-color:var(--orange);
+      box-shadow:0 16px 40px rgba(249,115,22,0.2);
+    }
+    .product-card.hidden{display:none;}
+
+    .product-img-wrap{
+      position:relative;aspect-ratio:4/3;overflow:hidden;
+      background:linear-gradient(135deg,#1E293B,#334155);
+    }
+    .product-img-wrap img{
+      width:100%;height:100%;object-fit:cover;
+      transition:transform 0.4s ease;filter:brightness(0.88);
+    }
+    .product-card:hover .product-img-wrap img{transform:scale(1.06);filter:brightness(1);}
+
+    .product-cat-badge{
+      position:absolute;top:0.7rem;left:0.7rem;
+      background:var(--orange);color:var(--white);
+      font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+      padding:0.25rem 0.65rem;border-radius:50px;
+    }
+
+    .product-body{padding:1.1rem 1.2rem 1.4rem;}
+    .product-name{
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.1rem;font-weight:700;color:var(--white);
+      letter-spacing:0.5px;margin-bottom:0.35rem;line-height:1.2;
+    }
+    .product-desc{font-size:0.78rem;color:var(--mid);line-height:1.55;}
+
+    .product-footer{
+      display:flex;align-items:center;justify-content:space-between;
+      margin-top:1rem;padding-top:0.8rem;border-top:1px solid var(--border);
+    }
+    .product-avail{
+      font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+      color:#4ADE80;display:flex;align-items:center;gap:0.4rem;
+    }
+    .product-avail::before{content:'';width:6px;height:6px;background:#4ADE80;border-radius:50%;}
+    .product-enquire{
+      font-size:0.72rem;font-weight:700;color:var(--orange);
+      cursor:pointer;text-decoration:none;transition:color 0.2s;
+      letter-spacing:0.5px;text-transform:uppercase;
+    }
+    .product-enquire:hover{color:var(--yellow);}
+
+    /* ── WHY US ── */
+    #why{background:var(--dark2);}
+    .why-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;
+    }
+    .why-card{
+      background:var(--dark);border:1px solid var(--border);
+      border-radius:16px;padding:2rem;
+      transition:all 0.3s;
+    }
+    .why-card:hover{border-color:var(--orange);transform:translateY(-3px);}
+    .why-icon{font-size:2.2rem;margin-bottom:1rem;}
+    .why-title{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;letter-spacing:0.5px;}
+    .why-text{font-size:0.84rem;color:var(--mid);line-height:1.6;}
+
+    /* ── CONTACT ── */
+    #contact{background:var(--dark);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+
+    .contact-info{display:flex;flex-direction:column;gap:1.5rem;}
+    .contact-item{
+      display:flex;align-items:flex-start;gap:1.2rem;
+      background:var(--card-bg);border:1px solid var(--border);
+      border-radius:14px;padding:1.5rem;
+      transition:border-color 0.2s;
+    }
+    .contact-item:hover{border-color:var(--orange);}
+    .contact-item-icon{
+      width:48px;height:48px;border-radius:10px;
+      background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.3rem;flex-shrink:0;
+    }
+    .contact-item-title{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:0.3rem;}
+    .contact-item-val{font-size:0.95rem;color:var(--white);font-weight:500;}
+    .contact-item-val a{color:var(--white);text-decoration:none;transition:color 0.2s;}
+    .contact-item-val a:hover{color:var(--orange);}
+
+    .map-wrap{
+      border-radius:18px;overflow:hidden;
+      border:2px solid var(--border);
+      box-shadow:0 8px 32px rgba(0,0,0,0.4);
+      position:relative;
+    }
+    .map-wrap iframe{width:100%;height:360px;display:block;filter:grayscale(30%) contrast(1.1);}
+
+    /* WhatsApp float */
+    .wa-float{
+      position:fixed;bottom:2rem;right:2rem;z-index:200;
+      background:#25D366;color:var(--white);
+      width:58px;height:58px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.6rem;text-decoration:none;
+      box-shadow:0 6px 24px rgba(37,211,102,0.5);
+      transition:all 0.25s;
+      animation:waPulse 2.5s infinite;
+    }
+    .wa-float:hover{transform:scale(1.1);box-shadow:0 10px 30px rgba(37,211,102,0.7);}
+    @keyframes waPulse{
+      0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.5),0 0 0 0 rgba(37,211,102,0.4);}
+      50%{box-shadow:0 6px 24px rgba(37,211,102,0.5),0 0 0 14px rgba(37,211,102,0);}
+    }
+
+    /* ── FOOTER ── */
+    footer{
+      background:var(--dark2);
+      border-top:2px solid var(--orange);
+      padding:2rem 5%;
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+    }
+    .footer-logo{
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.4rem;font-weight:900;color:var(--white);
+    }
+    .footer-logo span{color:var(--orange);}
+    .footer-copy{font-size:0.78rem;color:var(--mid);}
+
+    /* ── MODAL ── */
+    .modal-overlay{
+      display:none;position:fixed;inset:0;z-index:500;
+      background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);
+      align-items:center;justify-content:center;padding:1rem;
+    }
+    .modal-overlay.open{display:flex;}
+    .modal{
+      background:var(--card-bg);border:1px solid var(--border);
+      border-radius:20px;max-width:480px;width:100%;overflow:hidden;
+      animation:modalIn 0.3s ease;
+    }
+    @keyframes modalIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+    .modal-img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+    .modal-body{padding:1.8rem;}
+    .modal-cat{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:0.4rem;}
+    .modal-name{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;color:var(--white);margin-bottom:0.6rem;}
+    .modal-desc{font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:1.5rem;}
+    .modal-actions{display:flex;gap:0.8rem;flex-wrap:wrap;}
+    .modal-close{
+      position:absolute;top:1rem;right:1rem;
+      background:var(--dark3);color:var(--white);
+      width:36px;height:36px;border-radius:50%;
+      border:none;font-size:1.1rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:background 0.2s;
+    }
+    .modal-close:hover{background:var(--orange);}
+    .modal-wrap{position:relative;}
+
+    /* Scroll reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:860px){
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-right{display:none;}
+      nav .nav-links{display:none;}
+      .contact-grid{grid-template-columns:1fr;}
+      .hero-stats{gap:1.5rem;}
+    }
+    @media(max-width:480px){
+      .topbar{flex-direction:column;text-align:center;}
+      .product-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>⚡ Your Trusted Electrical & Hardware Store</span>
+  <div class="topbar-phones">
+    <a href="tel:9052845700">📞 9052845700</a>
+    <a href="tel:8074885321">📞 8074885321</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    SUNIL<span>⚡</span>ENTERPRISES
+    <small>Electrical &amp; Hardware</small>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/919052845700" target="_blank" class="nav-cta">WhatsApp Order</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Established &amp; Trusted</div>
+      <h1 class="hero-h1">
+        Everything
+        <span class="accent">Electrical.</span>
+        One Stop.
+      </h1>
+      <p class="hero-desc">
+        From fans and lights to wires, switches, and appliances — Sunil Enterprises stocks everything you need for home, office, and industrial electrical work. Quality products, honest pricing.
+      </p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Browse Products</a>
+        <a href="#contact" class="btn-ghost">Find Us →</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num"></div>
+          <div class="stat-label"></div>
+        </div>
+        <div>
+          <div class="stat-num"></div>
+          <div class="stat-label"></div>
+        </div>
+        <div>
+          <div class="stat-num"></div>
+          <div class="stat-label"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Electrical store interior - wide banner -->
+      <div class="hero-card">
+      <!-- Electrical switches -->
+        <img src="https://www.goldmedalindia.com/blog/wp-content/uploads/2024/11/Top-5-Fire-Safety-Tips-for-Managing-Electrical-Appliances.jpg" alt="Electrical store"/>
+        <div class="hero-card-label">⚡ Full Stock Available</div>
+      </div>
+      <!-- Electrical switches -->
+      <div class="hero-card">
+<img src="https://images.openai.com/static-rsc-4/c-eWHkkYNvdLW4zDX3cluy8q9veYK4AWCZacLx69K7DWrrCgn672xvLVxrq3gggfypZ2YQQEawz0_OOCvwzT_nEO7c5SOWOrprg13u-MRs8no_38lN_-5CBqppSKPdLg9LYneAZcxFDx6MJNY4IUQPPsNK3gHGjqmHxJkNjSDFa26LhpjYYxVeZID_qWVugo?purpose=fullsize" alt="Switches">
+    <div class="hero-card-label">Switches</div>
+</div>
+      <!-- LED bulbs -->
+      <div class="hero-card">
+        <img src="https://images.openai.com/static-rsc-4/RrqqjfIoPB-XpXbymBOHXXkbF-FCrjqtJvQKAPsFou1pENmko0CAHkT4p6yKgHgW1NHUN-6IevnS6HNxWA31-bwBg-NYy2spc3HHdBIQ0OTApoXPg0WysSWnfjtwXUVl7rQdrEmZjK8fegOm9gLLTm8_pYHDpKxDATghxLpYi63xD6dyN3MmYrnVQJkGVaWJ?purpose=fullsize" alt="LED Lights"/>
+        <div class="hero-card-label">Lights &amp; Bulbs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Fans</span>
+    <span class="marquee-item">Lights &amp; Bulbs</span>
+    <span class="marquee-item">Wire Coils</span>
+    <span class="marquee-item">Switches &amp; Sockets</span>
+    <span class="marquee-item">Fan Rods</span>
+    <span class="marquee-item">Nuts &amp; Bolts</span>
+    <span class="marquee-item">Water Heater</span>
+    <span class="marquee-item">Cooker &amp; Mixi</span>
+    <span class="marquee-item">AC Box</span>
+    <span class="marquee-item">Remotes</span>
+    <span class="marquee-item">Cutting Blades</span>
+    <span class="marquee-item">Tapes &amp; Cables</span>
+    <span class="marquee-item">Fans</span>
+    <span class="marquee-item">Lights &amp; Bulbs</span>
+    <span class="marquee-item">Wire Coils</span>
+    <span class="marquee-item">Switches &amp; Sockets</span>
+    <span class="marquee-item">Fan Rods</span>
+    <span class="marquee-item">Nuts &amp; Bolts</span>
+    <span class="marquee-item">Water Heater</span>
+    <span class="marquee-item">Cooker &amp; Mixi</span>
+    <span class="marquee-item">AC Box</span>
+    <span class="marquee-item">Remotes</span>
+    <span class="marquee-item">Cutting Blades</span>
+    <span class="marquee-item">Tapes &amp; Cables</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Our Inventory</div>
+    <h2 class="section-h2">All Products</h2>
+  </div>
+
+  <div class="filter-wrap reveal">
+    <button class="filter-btn active" data-filter="all">All Items</button>
+    <button class="filter-btn" data-filter="fans">Fans</button>
+    <button class="filter-btn" data-filter="lights">Lights &amp; Bulbs</button>
+    <button class="filter-btn" data-filter="wiring">Wiring &amp; Cable</button>
+    <button class="filter-btn" data-filter="switches">Switches &amp; Sockets</button>
+    <button class="filter-btn" data-filter="hardware">Hardware</button>
+    <button class="filter-btn" data-filter="appliances">Appliances</button>
+    <button class="filter-btn" data-filter="accessories">Accessories</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    
+
+    <!-- Fan Rods: metal rods / pipes -->
+    <div class="product-card reveal" data-cat="fans"
+      data-name="Fan Rods"
+      data-desc="Extension rods for ceiling fans in various lengths (12inch, 18inch, 24inch). Durable mild steel with powder coat finish."
+      data-img="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/hcAx0ksaBBL4YYIn2CG5SBk-7q7GgsvO7vLdWIuSh1z6ux6rfNvklvfTQ9POp0NIMUebE7dDo5aWrkklCXpn0_ILjAErwx0tU7AGMCbWYWptLtIdsh7liuBtmj6iow_sewpkny3YtckpbJaPiL4Dso4qD2qiYJ8MBOarnFeF7WYt5SY2CmefdaeAcqd9vBUF?purpose=fullsize" alt="Fan Rods" loading="lazy"/>
+        <span class="product-cat-badge">Fans</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Fans</div>
+        <div class="product-desc">Extension rods in multiple lengths. MS powder-coated finish.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Fan Rods" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+  
+
+    
+
+    <!-- ══ LIGHTS & BULBS ══ -->
+
+    <!-- 9W LED Bulbs: LED bulb close-up -->
+    <div class="product-card reveal" data-cat="lights"
+      data-name="9W LED Bulbs"
+      data-desc="Energy-saving 9 watt LED bulbs. Bright white light, long lifespan up to 25,000 hours. Compatible with standard holders."
+      data-img="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/Wbrf2Xb072SBD1kvrw_0CIBiWMh5qahWIfP16YlWYhzP9YXnS-afQTvUdbWbceQoWztZ54HHlS9r5EtwAZooWxyjw5t-VsS2H1kJYmEZJJUlYrwxSTTfawzBgxtlH4NZ72eCnBykY3q1GsJ1-BJDXPvjfSclL8lH9OKqHcXrBlVoklfQwbEw6KGik9utN6qN?purpose=fullsize" alt="9W LED Bulb" loading="lazy"/>
+        <span class="product-cat-badge">Lights</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">9W LED Bulbs</div>
+        <div class="product-desc">Energy-saving, 25,000+ hrs lifespan. Bright white light.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about 9W LED Bulbs" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    
+
+    
+
+    
+    <!-- Bulb Holders: pendant lamp holder/socket -->
+    <div class="product-card reveal" data-cat="lights"
+      data-name="Bulb Holders"
+      data-desc="Batten and pendant bulb holders in B22 and E27 fittings. Ceramic and PVC options. Safe and durable."
+      data-img="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/-sP1UtOwsNb9Phy0qngjkxrm8RM_oBJ2QSOapTW8kQrFLLghtJLyO4JjZT-pDIh2WPUpxIjuhvgzGUUamRbehtbqAec4k546mcGDlp0XaU0G4-hcuBMULKCNaWrqYCrdUSk76jh_pISb3cKKNevca2a9BGDtiAmJ7Sazm2-ElzFunW6ZwxtbbgjAjPUz9csM?purpose=inline" alt="Bulb Holders" loading="lazy"/>
+        <span class="product-cat-badge">Lights</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Bulb Holders</div>
+        <div class="product-desc">B22 &amp; E27 fittings. Ceramic &amp; PVC. Pendant and batten types.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Bulb Holders" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ WIRING & CABLE ══ -->
+
+    <!-- Wire Coils: electrical copper wire coils -->
+    <div class="product-card reveal" data-cat="wiring"
+      data-name="Wire Coils"
+      data-desc="Copper conductor PVC insulated electrical wire coils. Available in 1.5 sq mm, 2.5 sq mm, 4 sq mm and 6 sq mm sizes. ISI marked."
+      data-img="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/_PF69vFMVrykGT_yLmVSgLf_ukrnXNFhLzlZWpH7kpvdh4RDKn6P1VFS68HI3gnm7jy73cCFOMgVzAHFStypuatqIZsdWrZ6YMK5A0xmuNRWoP0O00_rLKMi6WGxYtucKWqNfUOxDjcVMNrrcVhjlI3S-CmSPEwCbcLyvyGGsjA?purpose=inline" alt="Wire Coils" loading="lazy"/>
+        <span class="product-cat-badge">Wiring</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Wire Coils</div>
+        <div class="product-desc">ISI marked copper PVC wire. 1.5 to 6 sq mm sizes.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://images.openai.com/static-rsc-4/_PF69vFMVrykGT_yLmVSgLf_ukrnXNFhLzlZWpH7kpvdh4RDKn6P1VFS68HI3gnm7jy73cCFOMgVzAHFStypuatqIZsdWrZ6YMK5A0xmuNRWoP0O00_rLKMi6WGxYtucKWqNfUOxDjcVMNrrcVhjlI3S-CmSPEwCbcLyvyGGsjA?purpose=inline" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flexible Pipe: corrugated conduit pipes -->
+    <div class="product-card reveal" data-cat="wiring"
+      data-name="Flexible Pipe"
+      data-desc="Corrugated PVC conduit flexible pipes for wire protection. Available in 20mm, 25mm and 32mm diameter for surface and concealed wiring."
+      data-img="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/40vcJwP5rsGszvV8MvgKRqNow9oCsX5qotBxSla2g3ZNC54KAKk-iC4-76Ux9sALCX1qL-sUUOUcRLh-QAhP5-fAwhLs55uxwmed0GwDoi5GQhqS2DUPWiRzmad5PSf5KOiLXu6TrVRz0QVI4oqn78wZeU63I2NCYZqEZ3k6P2JNvjCPnFXVOh30_KkZlkOe?purpose=inline" alt="Flexible Pipe" loading="lazy"/>
+        <span class="product-cat-badge">Wiring</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Flexible Pipe</div>
+        <div class="product-desc">PVC conduit pipes for wire protection. 20mm–32mm dia.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Flexible Pipe" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Silk Wire: braided/coloured electrical wire -->
+    <div class="product-card reveal" data-cat="wiring"
+      data-name="Silk Wire"
+      data-desc="Flexible braided silk covered wire for internal appliance wiring and decorative fixtures. Available in various colours and gauges."
+      data-img="https://images.unsplash.com/photo-1603732551658-5fabbafa84eb?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/a2I8YdsjQOavpXQmm_KEa6BZsMNA-niUjYgcnLtstnK2CNdDUBns2Zx0JlOhIMm9wHlKqAQGazYQe5Pc2H00YpOihZakE5XPL42hcfQqsteSF3zM9bw7hoTDnwzKsnuO4yI8BlWK-jgCSZEGzSRk0yg0KhTqedBjtTpZlp-28UMu4N4KYj8LTLMvriXXMDfu?purpose=fullsize" alt="Silk Wire" loading="lazy"/>
+        <span class="product-cat-badge">Wiring</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Silk Wire</div>
+        <div class="product-desc">Braided flexible wire for appliances &amp; decorative fittings.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Silk Wire" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Tape Reels: PVC insulation tape roll -->
+    <div class="product-card reveal" data-cat="wiring"
+      data-name="Tape Reels"
+      data-desc="Electrical insulation PVC tape reels in black, red and other colours. High voltage resistance, self-adhesive, moisture-proof."
+      data-img="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/a34Qd3DUGt58N6XK3sA_3YHqnURgwJp1pDIbSqAmBwsVVwvPJJbzw4tOOeTyOF4mxoJWJtajwNgjyI1p8ysMwKx8v6LV90XVVFdx0jI5vOwdv12StN9AYHRjvfsUN9dUc1PDOpoxcdVIe9ekjkSB8ecEenPEYek5925m9gnACuk7WvjvuFFrZVvgV2rRyHtR?purpose=fullsize" alt="Tape Reels" loading="lazy"/>
+        <span class="product-cat-badge">Wiring</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Tape Reels</div>
+        <div class="product-desc">PVC insulation tape — high voltage resistance, moisture-proof.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Tape Reels" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teflon Tapes: white PTFE thread seal tape -->
+    <div class="product-card reveal" data-cat="wiring"
+      data-name="Teflon Tapes"
+      data-desc="PTFE thread seal tape for plumbing and pipe fittings. Prevents leaks at threaded joints. White, standard size."
+      data-img="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/2nYwXtJ5OjD0FJr0jkca2V8XmmKDl9VFmV_krxwbsS6IsuXdm21ImaqCa82CINLIfV4jKXUokAeURHpveRzXduB5dZgmSYY6oiDEpO6wGvG5FBzZf6jiMYfVEA84frvNYrnS4TWmr6KMWpWKp_aVSIvJhW90Q3_nL0WzLWQxYL0?purpose=inline" alt="Teflon Tape" loading="lazy"/>
+        <span class="product-cat-badge">Wiring</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Teflon Tapes</div>
+        <div class="product-desc">PTFE thread seal tape. Prevents pipe joint leaks.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Teflon Tapes" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SWITCHES & SOCKETS ══ -->
+
+    <!-- Switches: actual modular wall switch -->
+    <div class="product-card reveal" data-cat="switches"
+      data-name="Switches"
+      data-desc="Modular and non-modular electrical switches. 6A and 16A ratings. Single, double and multi-gang options. ISI approved."
+      data-img="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/0BL3ZaHBK9I2af7HVuehQ6eY8WdvjonorEzNi4lVDOk6BQ5fck3ezEPdX-WM7qgij-Il5ZB1Zz1kRelkhSb_ItZ5D1c29yOszlE_4D8QWoM1g6q0OWwwbrPrukF_5pwRu-DqtBMhNnpIqmhcph2QoHtfYvu6pkZ2SIpsaA9kQ2MyRxqBSj7rsPafXnhb3VYL?purpose=inline" alt="Switches" loading="lazy"/>
+        <span class="product-cat-badge">Switches</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Switches</div>
+        <div class="product-desc">Modular &amp; non-modular. 6A &amp; 16A. ISI approved. All gang options.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Switches" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sockets: electrical power socket/outlet -->
+    <div class="product-card reveal" data-cat="switches"
+      data-name="Sockets"
+      data-desc="3-pin and 2-pin power sockets, 5A and 15A ratings. Suitable for home and commercial installations. ISI marked."
+      data-img="https://images.unsplash.com/photo-1558002038-1055e2dae1d7?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/vm_0wooioSkaB2jpsR0ZR_9OKQ9fzRU8lkuB4oZX9lYbgpH1Bq1GN-ilwn4TvmA_Pw4Ew_X59oxjslHUOzYDjzlk-NIb8GaYdQ6bV1PweVg-pIlBQRHEG5sUPnJ7jGJMQXjvI84bdT_Lw_SaH6z1FYitv4ekD3dkI1F61Wa4M79kIHoLMzDRyNowKPOZw_nA?purpose=inline" alt="Sockets" loading="lazy"/>
+        <span class="product-cat-badge">Switches</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Sockets</div>
+        <div class="product-desc">3-pin &amp; 2-pin. 5A &amp; 15A. Home &amp; commercial. ISI marked.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Sockets" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <!-- Testers: electrical screwdriver tester -->
+    <div class="product-card reveal" data-cat="switches"
+      data-name="Testers"
+      data-desc="Electrical line testers / screwdriver testers to check live wires. Non-contact voltage testers also available."
+      data-img="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/ql29XLsh2iyLwA2lJ-Z4llRgLAr9i0NL1hs2ph4bo-afjxDOE0SU_ibwHOZzjVlh2YQMEHknU0Dxw9u-TO8mir3QPP4zWEWBYfpc-h5U2fJwI-gkv8m-INj42qAODz50ikQqhMZlHEDX5dHj-8CHe1HnzQSc0hwl8gG5pXpkr06gVHhimEPAzrMTdc_GlmEm?purpose=fullsize" alt="Testers" loading="lazy"/>
+        <span class="product-cat-badge">Switches</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Testers</div>
+        <div class="product-desc">Line testers &amp; non-contact voltage testers. Electrician essential.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Testers" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    <!-- Cutting Blades: angle grinder / cutting disc -->
+    <div class="product-card reveal" data-cat="hardware"
+      data-name="Cutting Blades"
+      data-desc="Hacksaw &amp; angle grinder cutting blades. W/C (wet/concrete) and I/C (iron/cast) blades for all materials."
+      data-img="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/9jcHm-MUeeYRYqC_YM2eZi1Myk42cZ3T39SsuczWm3Lm3LeKp6-E-otpOgTY5fb6TBjnN6sdnbtmnSju4aC2MJb1T9J2YIydmdNXlekXq841jw9qzJ1q-zWJtkZooqcc241qjPMOwEfMVsk4mLDZELcHbTLCtOE4m3I2zoSCY2kGFqhhd83mkGfub4HLhRyI?purpose=fullsize" alt="Cutting Blades" loading="lazy"/>
+        <span class="product-cat-badge">Hardware</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Cutting Blades</div>
+        <div class="product-desc">W/C blades (wet/concrete) &amp; I/C blades (iron/cast). All sizes.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Cutting Blades" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <!-- ══ APPLIANCES ══ -->
+
+    <!-- Water Heater: electric geyser / water heater -->
+    <div class="product-card reveal" data-cat="appliances"
+      data-name="Water Heater"
+      data-desc="Electric instant and storage water heaters. 1L to 25L capacity. Energy-efficient, BEE rated. Suitable for home and commercial use."
+      data-img="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/lx5-FdU-Bl1MtUSekveatkP6cJje5ovjqe8jUCMXzkgHuejRiA0VtAiCeVUeIpAdeNggidKjyvLUvd-OfpJLvgQBy3Jpr0PtIObicUcYVcgC9vdaTplDX1C4rl_PaDwoxvt3jk5udRsuDFcfZnJRXfsAMeF8rl_w7TG8i21dNfJ18sUwRvVaFM56dg9WmQVb?purpose=fullsize" alt="Water Heater" loading="lazy"/>
+        <span class="product-cat-badge">Appliances</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Water Heater</div>
+        <div class="product-desc">Instant &amp; storage. 1L–25L. BEE rated energy-efficient.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Water Heater" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cooker: electric rice cooker -->
+    <div class="product-card reveal" data-cat="appliances"
+      data-name="Cooker"
+      data-desc="Electric rice cookers and pressure cookers. Multiple capacity options. Non-stick coating, auto keep-warm function."
+      data-img="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/mIEauPpeZ8QwSJeiOP9iAKkFFy_LlhYxl5zR2NEeX03VRarUKBBDyprZ_gG1iY6oWLnWegdJgeCsYBnwGgRkNXT9NpsttdFnBUq4ofLDzqa-shxPkMf8R8POQkSHB69T2mdvAyPyZIp7Q60Z4ck_P0XaYDoGD7_R9YIolx0w4dejv-6rgvZdoKdTiHom-3iF?purpose=fullsize" alt="Cooker" loading="lazy"/>
+        <span class="product-cat-badge">Appliances</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Cooker</div>
+        <div class="product-desc">Electric rice &amp; pressure cookers. Auto keep-warm. Non-stick.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Cooker" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mixer Grinder: actual mixer grinder / blender -->
+    <div class="product-card reveal" data-cat="appliances"
+      data-name="Mixer Grinder (Mixi)"
+      data-desc="Powerful mixer grinders for wet &amp; dry grinding. 500W to 750W motors. Stainless steel jars, multiple speed settings."
+      data-img="https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=800&q=80">
+      <div class="product-img-wrap">
+        <img src="https://images.openai.com/static-rsc-4/8XYUDggCfXWAs2UR9AiwA9NZSxt1Ur6KCV__4lHeXEAc3_x5BxvweZ4oJhKjL_xC3Pku67XX-mbln_F-MY00pHkcDy4MoLgGDRt9abRAxR72M1Aii4m-UCPbu262zceQdxIVyfc5Ub81qCro0G0DRFvbRG60EecWxYtBUHmftlEDbes7hroynixEaaUz0TXx?purpose=inline" alt="Mixer Grinder" loading="lazy"/>
+        <span class="product-cat-badge">Appliances</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Mixer Grinder (Mixi)</div>
+        <div class="product-desc">500W–750W. SS jars. Wet &amp; dry grinding. Multi-speed.</div>
+        <div class="product-footer">
+          <span class="product-avail">In Stock</span>
+          <a class="product-enquire" href="https://wa.me/919052845700?text=I want to enquire about Mixer Grinder" target="_blank">Enquire →</a>
+        </div>
+      </div>
+    </div>
+
+  
+
+  </div><!-- /product-grid -->
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Why Choose Us</div>
+    <h2 class="section-h2">Your Trusted Electrical Partner</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">⚡</div>
+      <div class="why-title">Complete Stock</div>
+      <div class="why-text">40+ product categories under one roof. From a single bulb holder to full wiring materials — we have it all.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">✅</div>
+      <div class="why-title">ISI Quality</div>
+      <div class="why-text">We stock only ISI marked and BEE rated products. Quality you can trust for every home and commercial project.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">💬</div>
+      <div class="why-title">WhatsApp Orders</div>
+      <div class="why-text">Order instantly on WhatsApp. Share your list and we'll get it ready. Fast, convenient and reliable service.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">📍</div>
+      <div class="why-title">Easy to Find</div>
+      <div class="why-text">Conveniently located. Check our Google Maps location to reach us easily. Ample parking available.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">💰</div>
+      <div class="why-title">Best Prices</div>
+      <div class="why-text">Competitive pricing on all products. Wholesale rates available for electricians, contractors and bulk orders.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🔧</div>
+      <div class="why-title">Expert Advice</div>
+      <div class="why-text">Our experienced staff will help you choose the right product. Free technical guidance on every purchase.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Find Us</div>
+    <h2 class="section-h2">Visit Our Store</h2>
+  </div>
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div>
+          <div class="contact-item-title">Phone Numbers</div>
+          <div class="contact-item-val">
+            <a href="tel:9052845700">📱 9052845700</a><br>
+            <a href="tel:8074885321">📱 8074885321</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">💬</div>
+        <div>
+          <div class="contact-item-title">WhatsApp Order</div>
+          <div class="contact-item-val"><a href="https://wa.me/919052845700" target="_blank">Chat on WhatsApp →</a></div>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div>
+          <div class="contact-item-title">Location</div>
+          <div class="contact-item-val"><a href="https://www.google.com/maps?q=16.3965078,80.1470548&z=17&hl=en" target="_blank">View on Google Maps →</a></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:0.5rem;">
+        <a href="https://wa.me/919052845700" target="_blank" class="btn-primary" style="font-size:0.85rem;padding:0.75rem 1.6rem;">💬 WhatsApp Now</a>
+        <a href="tel:9052845700" class="btn-ghost" style="font-size:0.85rem;padding:0.75rem 1.6rem;">📞 Call Us</a>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=16.3965078,80.1470548&z=16&output=embed"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Sunil Enterprises Location">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SUNIL<span>⚡</span>ENTERPRISES</div>
+  <div class="footer-copy">📞 9052845700 &nbsp;|&nbsp; 8074885321 &nbsp;|&nbsp; © 2025 Sunil Enterprises. All rights reserved.</div>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/919052845700?text=Hello! I want to enquire about your products." target="_blank" class="wa-float" title="Chat on WhatsApp">
+  💬
+</a>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal modal-wrap">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img src="" alt="" class="modal-img" id="modalImg"/>
+    <div class="modal-body">
+      <div class="modal-cat" id="modalCat"></div>
+      <div class="modal-name" id="modalName"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-actions">
+        <a href="#" target="_blank" class="btn-primary" id="modalWA" style="font-size:0.82rem;padding:0.7rem 1.4rem;">💬 WhatsApp Enquiry</a>
+        <a href="tel:9052845700" class="btn-ghost" style="font-size:0.82rem;padding:0.7rem 1.4rem;">📞 Call Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        card.classList.toggle('hidden', filter !== 'all' && card.dataset.cat !== filter);
+      });
+    });
+  });
+
+  // Modal
+  const overlay = document.getElementById('modalOverlay');
+  const modalImg = document.getElementById('modalImg');
+  const modalCat = document.getElementById('modalCat');
+  const modalName = document.getElementById('modalName');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalWA = document.getElementById('modalWA');
+  const modalClose = document.getElementById('modalClose');
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.classList.contains('product-enquire')) return;
+      modalImg.src = card.dataset.img;
+      modalImg.alt = card.dataset.name;
+      modalCat.textContent = card.dataset.cat.toUpperCase();
+      modalName.textContent = card.dataset.name;
+      modalDesc.textContent = card.dataset.desc;
+      modalWA.href = `https://wa.me/919052845700?text=Hello! I want to enquire about ${card.dataset.name}`;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow =
+      window.scrollY > 40 ? '0 4px 24px rgba(0,0,0,0.4)' : '';
+  });
+</script>
+</body>
+</html>
